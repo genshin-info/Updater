@@ -4,8 +4,7 @@ import mongoose from "mongoose";
 import character from "@/Modeles/character";
 class Main {
     constructor() {
-        require("dotenv").config({ path: "../.env" });
-        mongoose.connect(process.env.MONGOURL,{
+        mongoose.connect(process.argv[2],{
             // @ts-ignore
             useNewUrlParser: true,
             useUnifiedTopology: true

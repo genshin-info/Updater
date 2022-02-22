@@ -1,9 +1,3 @@
-declare module NodeJS {
-    interface ProcessEnv {
-        MONGOURL: string;
-    }
-}
-
 interface domain {
     language: "RU" | "EN";
     name: string;

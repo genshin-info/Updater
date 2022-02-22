@@ -1,9 +1,9 @@
 name: Update Translations
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    #- cron: "* 12 * * *"
+    - cron: "0/5 * * * *"
 env:
   MONGOURL: ${{secrets.MONGO_URL}}
 
@@ -21,4 +21,4 @@ jobs:
       - name: Compile Project
         run: npm run build
       - name: Update Translations
-        run: npm run start
+        run: node dist/index ${{secrets.MONGO_URL}}
