@@ -1,0 +1,24 @@
+name: Update Translations
+
+on:
+  push:
+    branches:
+      - main
+env:
+  MONGOURL: ${{secrets.MONGO_URL}}
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Clone localization repo
+        run: git clone https://github.com/genshin-info/Localization Localization
+      - name: Install Dependencies
+        run: npm i
+      - name: Compile Project
+        run: npm run build
+      - name: Update Translations
+        run: npm run start

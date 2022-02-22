@@ -1,0 +1,30 @@
+{
+  "name": "genshin-woker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build tsconfig.json",
+    "start": "node dist/index",
+    "dev:build": "tsc --build tsconfig.json -w",
+    "dev:watch": "nodemon dist/index"
+  },
+  "_moduleAliases": {
+    "@": "dist/src"
+  },
+  "keywords": [],
+  "author": "livixx",
+  "license": "ISC",
+  "dependencies": {
+    "directory-tree": "^3.2.2",
+    "dotenv": "^16.0.0",
+    "fs": "^0.0.1-security",
+    "module-alias": "^2.2.2",
+    "mongoose": "^6.0.6",
+    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
